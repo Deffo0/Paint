@@ -1,0 +1,93 @@
+
+<div class="vtool_bar">
+  <div>
+  <button id="circle" value="circle" (click)="createCircle();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/circle-icon.png" width = 45px length = 45px /></button>
+  </div>
+  <div>
+    <button id="rect" value="rect" (click)="createRect();disableButtons();closeSaveForm();closeLoadForm()"><img src= "assets/icons/rectangle-icon.png" width = 45px length = 45px /></button>
+  </div>
+  <div>
+    <button id="square" value="square" (click)="createSquare();disableButtons();closeSaveForm();closeLoadForm()"><img src= "assets/icons/square-icon.png" width = 45px length = 45px /></button>
+  </div>
+  <div>
+    <button id="triangle" value="triangle" (click)="createTriangle();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/triangle-icon.png" width = 45px length = 45px /> </button>
+  </div>
+  <div>
+    <button id="ellipse" value="ellipse" (click)="createEllipse();disableButtons();closeSaveForm;closeLoadForm()"> <img src= "assets/icons/ellipse-icon.png" width = 45px length = 45px /> </button>
+  </div>
+  <div>
+    <button id="line" value="line" (click) = "createLine();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/line-icon.png" width = 45px length = 45px /> </button>
+  </div>
+  <div>
+    <button id="remove" value="remove" (click)="remove();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/remove-icon.png" width = 37px length = 37px /> </button>
+  </div>
+  <div>
+    <button id="resize" value="resize" (click)="resize();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/resize-icon.png" width = 37px length = 37px /> </button>
+  </div>
+  <div>
+    <button id="move" value="move" (click)="move();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/move-icon.png" width = 37px length = 37px /> </button>
+  </div>
+  <div>
+    <button id="copy" value="copy" (click)="copy();disableButtons();closeSaveForm();closeLoadForm()"> <img src= "assets/icons/copy-icon.png" width = 37px length = 37px /> </button>
+  </div>
+</div>
+
+<div class="htool_bar">
+  <div>
+    <button type="button" id="fill" value="Coloring" (click)="fill_color();closeSaveForm();closeLoadForm()" > <img src= "assets/icons/brush-icon.png" width = 35px length = 35px /> </button>
+  </div>
+  <div>
+    <input type = "color" id="fill_color" name="Fill Color" value = "#e66465">
+    <label for="fill_color" >Fill Color</label>
+  </div>
+  <div>
+    <button type="button" id="confirm_stroke" value="Confirm Stroke" (click)="confirm_stroke();closeSaveForm();closeLoadForm()" >Confirm</button>
+    <input type = "color" id="stroke_color" name="Stroke Color" value = "#f6b73c">
+    <label for="stroke_color">Stroke Color</label>
+    <input type="number" id="stroke_width" name="Stroke Width" value = "3" min="0" max="100">
+    <label for="stroke_width">Stroke Width</label>
+  </div>
+  <div>
+    <button id="save" value="save" (click) = "openSaveForm();closeLoadForm()" width="45" height="45"> <img src= "assets/icons/save-icon.png" width = 35px length = 35px /> </button>
+  </div>
+  <div>
+    <button id="load" value="load" (click) = "openLoadForm();closeSaveForm()" width="45" height="45" > <img src= "assets/icons/open-icon.png" width = 35px length = 35px /> </button>
+  </div>
+  <div>
+    <button id="undo" value="undo" (click)="undo();closeSaveForm();closeLoadForm()"><img src= "assets/icons/undo-icon.png" width = 35px length = 35px /></button>
+  </div>
+  <div>
+    <button id="redo" value="redo" (click)="redo();closeSaveForm();closeLoadForm()"><img src= "assets/icons/redo-icon.png" width = 35px length = 35px /></button>
+  </div>
+  <div>
+    <button type="button" id="clear" value="clear" (click)="clearAll();closeSaveForm();closeLoadForm()" > <img src= "assets/icons/eraser-icon.png" width = 35px length = 35px /> </button>
+  </div>
+</div>
+
+
+
+
+<canvas id="board" width="1355" height="600" style="border:3px solid #f09623"></canvas>
+
+
+
+<div class="form-popup" id="loadForm">
+  <div class="form-container">
+    <label for="path"><b>File Path</b></label>
+    <input type="text" id="loadHere" placeholder="Enter the file path of desired load file" name="path" required>
+    <button type="submit" class="btn" (click)="sendPathLoad() ;">Enter</button>
+    <button type="submit" class="btn" (click)="closeLoadForm();" >Cancel</button>
+  </div>
+</div>
+
+<div class="form-popup" id="saveForm">
+  <div class="form-container">
+    <label for="path"><b>File Name (".json" or ".xml"):</b></label>
+    <input type="text" id="saveHere1" placeholder="Enter the name of saved file" name="path" value="savedFile.json">
+    <label for="path"><b>File Full Path:</b></label>
+    <input type="text" id="saveHere2" placeholder="Enter file location" name="path" required>
+    <button type="submit" class="btn" (click)="sendPathSave() ;" >Enter</button>
+    <button type="submit" class="btn" (click)="closeSaveForm();" >Cancel</button>
+  </div>
+</div>
+
